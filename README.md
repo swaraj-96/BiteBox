@@ -17,3 +17,23 @@
   - Error Handling
   - HTTPs
   - Tree Shaking - remove unused code 
+
+  # food ordering app
+  /*
+ COMPONENTS-
+   Header
+      - Logo 
+      - Navitems
+   Body
+      - Search Input
+      - Restaurant Container
+             - Restaurant Card
+                   - image
+                   - cuisine, name of restaurant, rating
+   Footer
+      - Copyright
+      - Links
+      - Contacts
+      - Address
+  NOTE :- All components should wrapped inside a main components called AppLayout
+  */
