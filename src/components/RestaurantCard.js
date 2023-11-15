@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
         />
         <div className="res-content">
           <h3>{resData.info.name}</h3>
-          <h4>{resData.info.cuisines.join(" , ")}</h4>
+          <h4 className="cuisine-info">{resData.info.cuisines.join(" , ")}</h4>
           <h4>{resData.info.avgRating} star</h4>
           <h4>{resData.info.costForTwo}</h4>
           <h4>{resData.info.sla.deliveryTime} min</h4>

@@ -12,6 +12,7 @@
 
 .nav-items{
     padding: 0px 20px;
+
 }
 .nav-items ul{
     display: flex;
@@ -25,11 +26,20 @@
     
 }
 
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 60px;
+    
+    
+}
+
 .res-card {
     width: 250px;
-    height: 350px;
+    height: 380px;
     padding: 5px;
     margin: 10px;
+    border-radius: 20px;
     
 }
 
@@ -41,33 +51,101 @@
 .res-logo{
     width: 100%;
     height: 40%;
+    border-radius: 20px;
 }
 
-.res-container{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 60px;
-    
-}
 
-h1,h2,h3,h4 {
-    margin-top: 5px;
 
-}
+
 
 .res-card h4 {
     font-size: 15px;
 }
 .res-content {
     margin: 5px;
+    white-space: inherit;
+    text-align: center;
    
 }
+
+.res-content h1,h2,h3,h4 {
+    margin: 15px 0 0 0;
+
+}
+ .res-content h3{
+    color: blue;
+ }
+
+ .res-content .cuisine-info{
+    color: red;
+    font-size: 13px;
+ }
 .filter{
     margin: 0 10px;
+    display: flex;
+    
 }
 
 .filter-btn {
     padding: 5px;
     cursor: pointer;
-    margin: 10px 60px;
+    margin: 10px;
+    align-items: center;
+    
 }
+
+.all-btn {
+    padding: 5px;
+    cursor: pointer;
+    margin: 10px;
+    align-items: center;
+
+}
+
+
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 65px 0 60px 60px;
+}
+
+.shimmer-card{
+    width: 250px;
+    height: 380px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    
+}
+
+.login-btn{
+    padding: 0 15px;
+    height: 25px;
+    width: 70px;
+    align-items: center;
+    margin-top: 16px;
+    align-items: center;
+    
+}
+
+
+.search{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.search-input {
+    padding: 5px;
+}
+
+.search-btn {
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
