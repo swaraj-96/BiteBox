@@ -7,6 +7,20 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
+  const [showIndex, setShowIndex] = useState(null);
+ 
+  //revise it
+  const setShowIndexProps = (index) => {
+    if(index === showIndex)
+    {
+      setShowIndex(null);
+    }
+    else{
+      setShowIndex(index);
+    }
+  }
+
+
   const resInfo = useRestaurantMenu(resId);
 
   if (resInfo === null) return <Shimmer />;
@@ -37,8 +51,16 @@ const RestaurantMenu = () => {
       </p>
 
       {/* accordion categories */}
-      {categories.map((category) => (
-        <RestaurantCategory />
+      {categories.map((category, index) => (
+        //controlled component
+        <RestaurantCategory
+          key={category?.card?.card.title}
+          data={category?.card?.card}
+          showItems = {index == showIndex ? true : false}
+          //revise it
+          setShowIndex = { () => setShowIndexProps(index)}
+          
+        />
       ))}
     </div>
   );

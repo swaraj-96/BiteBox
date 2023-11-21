@@ -61,7 +61,7 @@ const Body = () => {
             }}
           ></input>
           <button
-            className="search-btn px-4 py-2 bg-green-100 m-4 rounded-lg shadow-lg"
+            className="search-btn px-4 py-2 bg-green-100 m-4 rounded-lg shadow-lg font-semibold"
             onClick={() => {
               //console.log(inputText)
               //below code will filteeed from main data again and again
@@ -79,7 +79,7 @@ const Body = () => {
 
         <div className="search m-4 p-4 flex items-center">
           <button
-            className="all-btn px-4 py-2 bg-gray-200 rounded-lg mr-4 shadow-lg"
+            className="all-btn px-4 py-2 bg-gray-200 rounded-lg mr-4 shadow-lg font-semibold"
             onClick={() => {
               //this will show all the rest. from list of rest data(main data)
               setFilteredRestaurant(listOfRestaurants);
@@ -88,7 +88,7 @@ const Body = () => {
             All
           </button>
           <button
-            className="filter-btn px-4 py-2 bg-gray-200 rounded-lg shadow-lg"
+            className="filter-btn px-4 py-2 bg-gray-200 rounded-lg shadow-lg font-semibold"
             onClick={() => {
               const filteredList = listOfRestaurants.filter(
                 (res) => res.info.avgRating > 4.3
@@ -116,7 +116,7 @@ const Body = () => {
               (restaurant?.info.avgRating >= 4.2 &&
                 restaurant?.info.costForTwo == "₹150 for two") ||
               restaurant?.info.costForTwo == "100 for two" ? (
-                <RestaurantCardPromoted resData = {restaurant} />
+                <RestaurantCardPromoted resData={restaurant} />
               ) : (
                 <RestaurantCard resData={restaurant} />
               )
