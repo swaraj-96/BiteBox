@@ -11,6 +11,7 @@ import UserContext from "../utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 
 //this is for home page/parent route layout
 const AppLayout = () => {
@@ -31,9 +32,10 @@ const AppLayout = () => {
     // privider is used to wrap our whole app and connect it to our central store with props value as our store name.
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <div className="app">
+        <div className="app flex flex-col min-h-screen">
           <Header />
           <Outlet />
+          <Footer/>
         </div>
       </UserContext.Provider>
     </Provider>
