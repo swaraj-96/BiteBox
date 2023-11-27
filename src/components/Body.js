@@ -1,8 +1,9 @@
 import RestaurantCard, { withPromotedLabelPromoted } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -40,6 +41,9 @@ const Body = () => {
         Looks like you are offline!!! Please check your internet connection.
       </h1>
     );
+
+  // extracting state function from provider given by contextAPI
+  const {loggedInUser, setUserName} = useContext(UserContext)
 
   //conditional rendering
   //if(listOfRestaurants == 0){
@@ -100,6 +104,18 @@ const Body = () => {
             Top Rated Restaurant
           </button>
         </div>
+
+        <div className="p-4 my-4 m-4 flex items-center">
+          <label className="font-semibold">UserName : </label>
+        <input
+            className="border border-solid px-2 py-2 rounded-lg shadow-lg ml-2"
+            type="text"
+            value={loggedInUser}
+            //Here we use  setusername provided by contextapi in app.js via provider
+            onChange={(e) => setUserName(e.target.value) }
+        />
+        
+      </div>
       </div>
 
       <div className="res-container flex flex-wrap">
