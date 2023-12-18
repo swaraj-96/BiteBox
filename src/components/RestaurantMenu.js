@@ -3,36 +3,24 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import ShimmerRestaurant from "./ShimmerRestaurant";
 
 const RestaurantMenu = () => {
-  const { resId } = useParams();
-
   const [showIndex, setShowIndex] = useState(null);
- 
-  //revise it
-  const setShowIndexProps = (index) => {
-    if(index === showIndex)
-    {
-      setShowIndex(null);
-    }
-    else{
-      setShowIndex(index);
-    }
-  }
-
-
+  const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+  if (resInfo === null) return <ShimmerRestaurant/>;
 
-  if (resInfo === null) return <Shimmer />;
+  const {
+    areaName,
+    avgRatingString,
+    cuisines,
+    costForTwoMessage,
+    name,
+    sla,
+    totalRatingsString,
+  } = resInfo?.cards[0]?.card?.card?.info;
 
-  const { name, cuisines, costForTwoMessage } =
-    resInfo?.cards[0]?.card?.card?.info;
-
-  const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card
-      ?.card || {};
-
-  //console.log(itemCards);
   // filtering all types of menu list from the swiggy live api
   const categories =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -40,15 +28,41 @@ const RestaurantMenu = () => {
         c.card?.card?.["@type"] ==
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-
   console.log(categories);
 
+  //revise it
+  const setShowIndexProps = (index) => {
+    if (index === showIndex) {
+      setShowIndex(null);
+    } else {
+      setShowIndex(index);
+    }
+  };
+
+
   return (
-    <div className="menu text-center">
-      <h1 className="font-bold text-2xl my-6">{name}</h1>
-      <p className="font-semibold text-lg ">
-        {cuisines.join(", ")} - {costForTwoMessage}
-      </p>
+    <div  className='container-md my-8'>
+      {/* restaurant info */}
+      <div className="flex justify-between items-center pb-4 border-b border-dashed">
+        <div>
+          <h2 className="text-xl font-bold my-2">{name}</h2>
+          <p className="text-xs text-gray-500">{cuisines.join(", ")}</p>
+          <p className="text-xs text-gray-500">
+            {areaName}, {sla.lastMileTravelString}
+          </p>
+          <p className="font-semibold text-xs text-gray-500 ">
+            {costForTwoMessage}
+          </p>
+        </div>
+        <div className="border rounded-md font-bold  p-2 text-sm">
+          <p className="flex-center gap-1 mb-2 text-green-500 ">
+            ⭐ {avgRatingString}
+          </p>
+          <p className="pt-2 border-t text-xs font-normal text-gray-500">
+            {totalRatingsString}
+          </p>
+        </div>
+      </div>
 
       {/* accordion categories */}
       {categories.map((category, index) => (
@@ -56,10 +70,9 @@ const RestaurantMenu = () => {
         <RestaurantCategory
           key={category?.card?.card.title}
           data={category?.card?.card}
-          showItems = {index == showIndex ? true : false}
+          showItems={index == showIndex ? true : false}
           //revise it
-          setShowIndex = { () => setShowIndexProps(index)}
-          
+          setShowIndex={() => setShowIndexProps(index)}
         />
       ))}
     </div>
