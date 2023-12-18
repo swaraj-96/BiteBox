@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
-import UserContext from "../../utils/UserContext";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -42,103 +42,131 @@ const Body = () => {
       </h1>
     );
 
-  // extracting state function from provider given by contextAPI
-  const {loggedInUser, setUserName} = useContext(UserContext)
+  return (
+    <div className="body bg-white">
+      {/* search bar */}
 
-  //conditional rendering
-  //if(listOfRestaurants == 0){
-  //  return <Shimmer/>
-  // }
-  //conditional rendering
-  return listOfRestaurants == 0 ? (
-    <Shimmer />
-  ) : (
-    <div className="body mx-16">
-      <div className="filter flex py-2">
-        <div className="search p-4">
-          <input
-            type="text"
-            className="border border-solid px-2 py-2 rounded-lg shadow-lg"
-            value={inputText}
-            onChange={(e) => {
-              setInputText(e.target.value);
-            }}
-          ></input>
-          <button
-            className="search-btn px-4 py-2 bg-green-100 m-4 rounded-lg shadow-lg font-semibold"
-            onClick={() => {
-              //console.log(inputText)
-              //below code will filteeed from main data again and again
-              const filteredRestaurant = listOfRestaurants.filter((res) =>
-                res.info.name.toLowerCase().includes(inputText.toLowerCase())
-              );
-              //setListOfRestaurants(filteredRestaurant);
-              //below function will update only the duplicate data not main data
-              setFilteredRestaurant(filteredRestaurant);
-            }}
-          >
-            Search
-          </button>
-        </div>
-
-        <div className="search m-4 p-4 flex items-center">
-          <button
-            className="all-btn px-4 py-2 bg-gray-200 rounded-lg mr-4 shadow-lg font-semibold"
-            onClick={() => {
-              //this will show all the rest. from list of rest data(main data)
-              setFilteredRestaurant(listOfRestaurants);
-            }}
-          >
-            All
-          </button>
-          <button
-            className="filter-btn px-4 py-2 bg-gray-200 rounded-lg shadow-lg font-semibold"
-            onClick={() => {
-              const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4.3
-              );
-              //console.log(listOfRestaurants);
-              setFilteredRestaurant(filteredList);
-            }}
-          >
-            Top Rated Restaurant
-          </button>
-        </div>
-
-        <div className="p-4 my-4 m-4 flex items-center">
-          <label className="font-semibold">UserName : </label>
+      <div className="search flex gap-2 md:gap-4 max-w-[560px] w-[90%] mx-auto mt-6">
         <input
-            className="border border-solid px-2 py-2 rounded-lg shadow-lg ml-2"
-            type="text"
-            value={loggedInUser}
-            //Here we use  setusername provided by contextapi in app.js via provider
-            onChange={(e) => setUserName(e.target.value) }
-        />
-        
+          type="search"
+          className="p-2 px-4 rounded-md border outline-none focus-within:border-orange-400 border-gray-200 grow w-full"
+          value={inputText}
+          placeholder="Search for Chicken Biriyani"
+          onChange={(e) => {
+            setInputText(e.target.value);
+          }}
+        ></input>
+        <button
+          className="search-btn bg-orange-400 basis-2/12 text-center text-white p-2 flex justify-center gap-2 items-center md:px-8 rounded-md text-sm md:text-base"
+          onClick={() => {
+            //console.log(inputText)
+            //below code will filteeed from main data again and again
+            const filteredRestaurant = listOfRestaurants.filter((res) =>
+              res.info.name.toLowerCase().includes(inputText.toLowerCase())
+            );
+            //setListOfRestaurants(filteredRestaurant);
+            //below function will update only the duplicate data not main data
+            setFilteredRestaurant(filteredRestaurant);
+          }}
+        >
+          <MagnifyingGlassIcon className="w-4 h-4" />{" "}
+          <span className="hidden md:block">Search</span>
+        </button>
       </div>
+      {/* Filtered buttons */}
+
+      <div className="search flex gap-2 md:gap-4 max-w-[560px] w-[90%] mx-auto mt-6 justify-between">
+        <button
+          className="all-btn bg-black hover:bg-white text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 lg:px-4 rounded-xl text-sm md:text-base"
+          onClick={() => {
+            //this will show all the rest. from list of rest data(main data)
+            setFilteredRestaurant(listOfRestaurants);
+          }}
+        >
+          All
+        </button>
+        <button
+          className="filter-btn bg-black hover:bg-white text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base"
+          onClick={() => {
+            const filteredList = listOfRestaurants.filter(
+              (res) => res.info.avgRating > 4.3
+            );
+            //console.log(listOfRestaurants);
+            setFilteredRestaurant(filteredList);
+          }}
+        >
+          Top Rated Restaurant
+        </button>
+
+        <button
+          className="filter-btn bg-black hover:bg-white text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base"
+          onClick={() => {
+            const filteredList = listOfRestaurants.filter(
+              (res) => res.info?.sla?.deliveryTime <= 20
+            );
+            //console.log(listOfRestaurants);
+            setFilteredRestaurant(filteredList);
+          }}
+        >
+          Fast Delivery
+        </button>
+        <button
+          className="filter-btn bg-black hover:bg-white  text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base"
+          onClick={() => {
+            const filteredList = listOfRestaurants.filter(
+              (res) =>
+                res.info?.costForTwo == "₹150 for two" ||
+                res.info?.costForTwo == "₹120 for two" ||
+                res.info?.costForTwo == "₹200 for two" ||
+                res.info?.costForTwo == "₹300 for two" ||
+                res.info?.costForTwo == "₹100 for two"
+            );
+            //console.log(listOfRestaurants);
+            setFilteredRestaurant(filteredList);
+          }}
+        >
+          Less than Rs. 300
+        </button>
       </div>
+      {/* restaurant list */}
+      <div className="res-container container-max">
+        <h1 className="my-4 mt-8 font-bold text-2xl text-zinc-700">
+          Restaurants near you
+        </h1>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+          {/* //conditional rendering
+       //if(listOfRestaurants == 0){
+        //  return <Shimmer/>
+         // }
+          //conditional rendering */}
 
-      <div className="res-container flex flex-wrap">
-        {filteredRestaurant?.map((restaurant) => (
-          //this will render the filtered data
-          <Link
-            style={{ textDecoration: "none" }}
-            key={restaurant?.info.id}
-            to={"/restaurants/" + restaurant?.info.id}
-          >
-            {
-              /*if a restaurant is bestseller then add a bestseller label in it */
+          {listOfRestaurants == 0 ? (
+            Array.from({ length: 20 }).map((_, i) => <Shimmer key={i} />)
+          ) : filteredRestaurant && filteredRestaurant?.length != 0 ? (
+            filteredRestaurant?.map((restaurant) => (
+              //this will render the filtered data
+              <Link
+                key={restaurant?.info.id}
+                to={"/restaurants/" + restaurant?.info.id}
+                className="hover:scale-95 transition ease-in-out duration-300 relative z-10"
+              >
+                {
+                  /*if a restaurant is bestseller then add a bestseller label in it */
 
-              (restaurant?.info.avgRating >= 4.2 &&
-                restaurant?.info.costForTwo == "₹150 for two") ||
-              restaurant?.info.costForTwo == "100 for two" ? (
-                <RestaurantCardPromoted resData={restaurant} />
-              ) : (
-                <RestaurantCard resData={restaurant} />
-              )
-            }
-          </Link>
-        ))}
+                  (restaurant?.info.avgRating >= 4 &&
+                    restaurant?.info.costForTwo == "₹150 for two") ||
+                  restaurant?.info.costForTwo == "100 for two" ? (
+                    <RestaurantCardPromoted resData={restaurant} />
+                  ) : (
+                    <RestaurantCard resData={restaurant} />
+                  )
+                }
+              </Link>
+            ))
+          ) : (
+            <p>No restaurant found!</p>
+          )}
+        </div>
       </div>
     </div>
   );

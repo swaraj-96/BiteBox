@@ -26,6 +26,7 @@
     "tailwindcss": "^3.3.5"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@reduxjs/toolkit": "^1.9.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

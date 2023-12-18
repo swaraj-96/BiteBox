@@ -5,46 +5,49 @@ import { addItem } from "../../utils/cartSlice";
 const ItemList = ({ items }) => {
   console.log(items);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
-      //dispatch an action
-      dispatch(addItem(item))
-  }
+    //dispatch an action
+    dispatch(addItem(item));
+  };
 
   return (
-    <div>
+    <ul className="">
       {items.map((item) => (
-        <div
+        <li
           key={item.card.info.id}
-          className=" my-2 py-8 border-b-2 border-gray-200 text-left flex justify-between"
+          className="p-2 py-8 flex gap-4 md:gap-8 justify-between items-center border-b"
         >
-          <div className="w-9/12">
-            <div>
-              <h4 className="font-semibold text-m">{item.card.info.name}</h4>
-              <p className="text-s">₹ {item.card.info.price ? item.card.info.price / 100 :item.card.info.defaultPrice/ 100 }</p>
-            </div>
-            <p className="text-xs font-normal text-gray-600 mt-2">
+          <div className="basis-8/12 space-y-2">
+            <h2 className="text-base font-semibold">{item.card.info.name}</h2>
+            <p className="text-xs font-semibold">
+              ₹{" "}
+              {item.card.info.price
+                ? item.card.info.price / 100
+                : item.card.info.defaultPrice / 100}
+            </p>
+            <p className="text-xs hidden md:block">
               {item.card.info.description}
             </p>
           </div>
-          <div className="w-3/12 p-4">
-            <div className="absolute ">
-              <button
-                className="py-2 px-4 text-center mx-16 rounded-lg bg-white text-green-600 shadow-lg font-bold"
-                onClick={ () => handleAddItem(item)}
-              >
-                ADD
-              </button>
-            </div>
+
+          <div className="w-full basis-4/12 relative">
             <img
-              className="w-full rounded-md"
               src={CDN_URL + item.card.info.imageId}
-            ></img>
+              className="w-full h-32 aspect-video object-cover rounded-md"
+              alt=""
+            />
+            <button
+              className="bg-white text-orange-500 hover:bg-orange-500 hover:text-white font-bold p-2 px-6 rounded-md absolute shadow-md left-[10%] -bottom-5 -translate-x[-50%] md:left-[35%]"
+              onClick={() => handleAddItem(item)}
+            >
+              ADD
+            </button>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

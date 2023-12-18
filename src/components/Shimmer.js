@@ -1,25 +1,12 @@
 const Shimmer = () => {
-    return (
-        <div className="shimmer-container flex flex-wrap mx-16 my-28">
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-            <div className="shimmer-card m-4 p-4 w-[250px] h-[350px] rounded-lg bg-gray-100 shadow-lg"></div>
-        </div>
-    )
+  return (
+    <div className="animate-pulse space-y-2">
+      <div className="w-full bg-gray-200 rounded-md aspect-video min-h-[180px] object-cover block card-img relative"></div>
 
-}
+      <h2 className="text-lg font-semibold mt-2 h-4 rounded-md bg-gray-200"></h2>
+      <div className="flex items-center gap-2 w-1/3 h-2 rounded-md bg-gray-200"></div>
+    </div>
+  );
+};
 
 export default Shimmer;
