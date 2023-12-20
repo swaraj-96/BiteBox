@@ -9,6 +9,9 @@ module.exports = {
         "FarrowBallBorrowedLight": "#dbe5dc",
         "appTheme": "#FACB0B",
         "btnTheme" : "#21325E"
+      },
+      screens: {
+        "mysmall" : {'max' : '768px'}
       }
     },
   },

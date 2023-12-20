@@ -63,7 +63,10 @@ const RestaurantMenu = () => {
           </p>
         </div>
       </div>
-
+      <div className="flex justify-center items-center my-2">
+      <h3 className="font-semibold text-gray-500 py-2 text-base">~ M E N U ~</h3>
+      </div>
+       
       {/* accordion categories */}
       {categories.map((category, index) => (
         //controlled component

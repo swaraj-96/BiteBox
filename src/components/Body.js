@@ -130,9 +130,10 @@ const Body = () => {
       </div>
       {/* restaurant list */}
       <div className="res-container container-max">
-        <h1 className="my-4 mt-8 font-bold text-2xl text-zinc-700">
-          Restaurants near you
+        <h1 className=" mt-8 font-bold text-2xl text-zinc-700">
+        🍽️ All Restaurants Nearby
         </h1>
+        <p className="text-gray-500 mb-2 text-base">Discover unique tastes near you</p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
           {/* //conditional rendering
        //if(listOfRestaurants == 0){
