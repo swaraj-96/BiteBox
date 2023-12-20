@@ -38,11 +38,11 @@ const ItemList = ({ items }) => {
               <div className="w-full basis-4/12 relative">
                 <img
                   src={CDN_URL + item?.card?.info?.imageId}
-                  className="w-full md:h-32 h-auto aspect-video object-cover rounded-md"
+                  className="w-full  h-32 aspect-video object-cover block rounded-md "
                   alt=""
                 />
                 <button
-                  className="bg-btnTheme text-white hover:bg-appTheme hover:text-black font-bold p-2 px-6 rounded-md absolute shadow-md left-[9%] -bottom-5 -translate-x[-50%] md:left-[35%]"
+                  className="bg-btnTheme text-white hover:bg-appTheme hover:text-black font-bold p-2 px-6 rounded-md absolute shadow-md left-[8%] -bottom-5 -translate-x[-50%] md:left-[35%]"
                   onClick={() => handleAddItem({...item, itemPrice})}
                 >
                   ADD
