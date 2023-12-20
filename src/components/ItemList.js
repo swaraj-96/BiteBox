@@ -42,7 +42,7 @@ const ItemList = ({ items }) => {
                   alt=""
                 />
                 <button
-                  className="bg-btnTheme text-white hover:bg-appTheme hover:text-black font-bold md:p-2 p-1 md:px-6 px-4 rounded-md absolute shadow-md  -bottom-5 -translate-x-[-25%] md:-translate-x-[-30%] md:left-[20%]"
+                  className="bg-btnTheme text-white hover:bg-appTheme hover:text-black font-bold md:p-2 p-1 md:px-6 px-4 rounded-md absolute shadow-md  -bottom-5 -translate-x-[-23%] md:-translate-x-[-30%] md:left-[20%]"
                   onClick={() => handleAddItem({...item, itemPrice})}
                 >
                   ADD
