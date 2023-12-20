@@ -24,11 +24,11 @@ const Header = () => {
   return (
     <header className="sticky w-full top-0  bg-white  z-20 border-b shadow-sm  border-gray-10 md:py-0 py-2 ">
       <div className="container-max flex justify-between items-center">
-        <div className=" items-center gap-2">
+        <div className=" items-center gap-4">
           <Logo />
         </div>
 
-        <ul className="text-zinc-700 md:ml-auto  gap-9 md:gap-4 items-center flex">
+        <ul className="text-zinc-700 md:ml-auto   gap-7 md:gap-4 items-center flex">
           <li>
             <Link
               className="p-2 md:px-4 hover:bg-appTheme  rounded-md flex items-center gap-2"
