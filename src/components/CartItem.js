@@ -25,17 +25,17 @@ const CartItem = () => {
     );
   }
   return (
-    <ul className="basis-7/12 bg-white md:bg-gray-200">
+    <ul className="basis-7/12 bg-white md:bg-gray-200 rounded-lg md:rounded-none p-2 md:p-0">
       <button 
       onClick={() => dispatch(clearCart())}
-      className="bg-black hover:bg-white  text-center text-white hover:text-black hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base m-2 font-semibold">
+      className="bg-btnTheme hover:bg-appTheme  text-center text-white hover:text-black hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base m-2 font-semibold">
         Clear Cart
       </button>
       {cartItems &&
         cartItems.map((item) => (
           <li
             key={item?.item?.card?.info?.id}
-            className="flex gap-4 justify-between max-w-[600px] my-4 bg-white  md:shadow-md p-4"
+            className="flex gap-4 justify-between max-w-[600px] my-4 bg-white  md:shadow-md p-4 border border-appTheme m-2 rounded-lg md:rounded-none md:border-none"
           >
             <div className="basis-3/12">
               <img
@@ -71,29 +71,29 @@ const CartItem = () => {
 
               {/* actions */}
               <div className="flex justify-between items-center mt-2">
-                <div className="flex items-center border border-solid border-gray-700">
+                <div className="flex items-center border border-solid border-appTheme">
                   <button
                     onClick={() => decreaseItem(item?.item?.card?.info?.id)}
                     disabled={item?.quantity === 1}
                     className={
-                      " disabled:text-orange-500/50 disabled:cursor-not-allowed text-gray-400 font-bold w-8 h-8"
+                      " disabled:text-orange-500/50 disabled:cursor-not-allowed text-appTheme font-bold w-8 h-8"
                     }
                   >
                    ╶
                   </button>
-                  <p className=" w-8 h-8 flex justify-center items-center text-sm text-green-600 font-semibold">
+                  <p className=" w-8 h-8 flex justify-center items-center text-sm text-btnTheme font-semibold">
                     {item?.quantity}
                   </p>
                   <button
                     onClick={() => increaseItem(item?.item?.card?.info?.id)}
-                    className="text-green-600 font-bold w-8 h-8"
+                    className="text-btnTheme font-bold w-8 h-8"
                   >
                     +
                   </button>
                 </div>
                 <button
                   onClick={() => removeItem(item?.item?.card?.info?.id)}
-                  className="border text-xs font-semibold text-white p-2 px-4 rounded-md bg-black hover:bg-gray-200 hover:text-black hover:shadow-lg"
+                  className="border text-xs font-semibold text-white p-2 px-4 rounded-md bg-btnTheme hover:bg-appTheme hover:text-black hover:shadow-lg"
                 >
                   Remove
                 </button>

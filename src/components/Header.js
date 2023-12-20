@@ -31,14 +31,14 @@ const Header = () => {
         <ul className="text-zinc-700 ml-auto gap-2 md:gap-4 items-center hidden md:flex">
           <li>
             <Link
-              className="p-2 md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2"
+              className="p-2 md:px-4 hover:bg-appTheme  rounded-md flex items-center gap-2"
               to="/"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-4 h-4 text-gray-700"
+                className="w-4 h-4 text-gray-700 "
               >
                 <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
                 <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
@@ -48,7 +48,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              className="p-2 md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2"
+              className="p-2 md:px-4 hover:bg-appTheme  rounded-md flex items-center gap-2"
               to="/about"
             >
               <BuildingOfficeIcon className="w-4 h-4 text-gray-700" />{" "}
@@ -57,7 +57,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              className="p-2 md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2"
+              className="p-2 md:px-4 hover:bg-appTheme  rounded-md flex items-center gap-2"
               to="/contact"
             >
               <PhoneIcon className="w-4 h-4 text-gray-700" />{" "}
@@ -66,13 +66,13 @@ const Header = () => {
           </li>
           <li>
             <Link
-              className="p-2 relative md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2"
+              className="p-2 relative md:px-4 hover:bg-appTheme  rounded-md flex items-center gap-2"
               to="/cart"
             >
               <ShoppingBagIcon className="w-4 h-4 text-gray-700" />{" "}
               <p className="hidden md:block">Cart</p>
               {
-                <p className="absolute -top-1 -right-1 bg-orange-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full">
+                <p className="absolute -top-1 -right-1 bg-btnTheme text-white flex justify-center items-center w-5 h-5 text-xs rounded-full">
                   {cartItems.length}
                 </p>
               }
@@ -83,7 +83,7 @@ const Header = () => {
         {/*****navbar menu toggle for responsiveness*/}
         {!isMenuOpen ? (
           //not showing togglemenu
-          <div className="shadow-lg transition-all fixed top-full -right-[100%] bg-white h-screen p-4 px-8">
+          <div className="shadow-2xl transition-all fixed top-full -right-[100%] bg-appTheme h-screen p-4 px-8">
             <>
               <ul className="text-zinc-700 space-y-4">
                 <li>
@@ -129,7 +129,7 @@ const Header = () => {
                     <ShoppingBagIcon className="w-4 h-4 text-gray-700" />{" "}
                     <p>Cart</p>
                     {
-                      <p className="absolute -top-1 -right-1 bg-orange-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full">
+                      <p className="absolute -top-1 -right-1 bg-btnTheme text-white flex justify-center items-center w-5 h-5 text-xs rounded-full">
                         {cartItems.length}
                       </p>
                     }
@@ -140,7 +140,7 @@ const Header = () => {
           </div>
         ) : (
           //showing togglemenu
-          <div className="shadow-lg transition-all md:hidden absolute top-full right-0 bg-white h-screen p-4 px-8">
+          <div className="shadow-2xl transition-all md:hidden absolute top-full right-0 bg-appTheme h-screen p-4 px-8">
             <>
               <ul className="text-zinc-700 space-y-4">
                 <li>
@@ -186,7 +186,7 @@ const Header = () => {
                     <ShoppingBagIcon className="w-4 h-4 text-gray-700" />{" "}
                     <p>Cart</p>
                     {
-                      <p className="absolute -top-1 -right-1 bg-orange-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full">
+                      <p className="absolute -top-1 -right-1 bg-btnTheme text-white flex justify-center items-center w-5 h-5 text-xs rounded-full">
                         {cartItems.length}
                       </p>
                     }

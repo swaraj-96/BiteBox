@@ -51,13 +51,13 @@ const Body = () => {
           type="search"
           className="p-2 px-4 rounded-md border outline-none focus-within:border-orange-400 border-gray-200 grow w-full"
           value={inputText}
-          placeholder="Search for Chicken Biriyani"
+          placeholder="Find Flavor Delights"
           onChange={(e) => {
             setInputText(e.target.value);
           }}
         ></input>
         <button
-          className="search-btn bg-orange-400 basis-2/12 text-center text-white p-2 flex justify-center gap-2 items-center md:px-8 rounded-md text-sm md:text-base"
+          className="search-btn bg-appTheme basis-2/12 text-center text-white p-2 flex justify-center gap-2 items-center md:px-8 rounded-md text-sm md:text-base font-semibold"
           onClick={() => {
             //console.log(inputText)
             //below code will filteeed from main data again and again
@@ -77,7 +77,7 @@ const Body = () => {
 
       <div className="search flex gap-2 md:gap-4 max-w-[560px] w-[90%] mx-auto mt-6 justify-between">
         <button
-          className="all-btn bg-black hover:bg-white text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 lg:px-4 rounded-xl text-sm md:text-base"
+          className="all-btn bg-btnTheme text-center text-white p-2  justify-center gap-2 items-center md:px-4  rounded-md text-[10px] md:text-sm hover:bg-appTheme hover:text-black hover:shadow-lg font-semibold"
           onClick={() => {
             //this will show all the rest. from list of rest data(main data)
             setFilteredRestaurant(listOfRestaurants);
@@ -86,7 +86,7 @@ const Body = () => {
           All
         </button>
         <button
-          className="filter-btn bg-black hover:bg-white text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base"
+          className="filter-btn bg-btnTheme  text-center text-white p-2  justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-appTheme hover:text-black hover:shadow-lg font-semibold"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4.3
@@ -99,7 +99,7 @@ const Body = () => {
         </button>
 
         <button
-          className="filter-btn bg-black hover:bg-white text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base"
+          className="filter-btn bg-btnTheme  text-white p-2 justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-appTheme hover:text-black hover:shadow-lg font-semibold"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info?.sla?.deliveryTime <= 20
@@ -111,7 +111,7 @@ const Body = () => {
           Fast Delivery
         </button>
         <button
-          className="filter-btn bg-black hover:bg-white  text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base"
+          className="filter-btn bg-btnTheme  text-center text-white p-2  justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-appTheme hover:text-black hover:shadow-lg font-semibold"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) =>

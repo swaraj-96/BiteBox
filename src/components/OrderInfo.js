@@ -12,7 +12,7 @@ const OrderInfo = () => {
 
   return (
     <div className="basis-5/12">
-      <div className=" p-8  border shadow-md my-8 md:mt-0 bg-white">
+      <div className=" p-8  border shadow-md my-8 md:mt-0 bg-white rounded-lg md:rounded-none">
         <h3 className="text-md font-bold border-b pb-4">Bill Details</h3>
 
         {/* order details */}
@@ -44,12 +44,12 @@ const OrderInfo = () => {
         </div>
         
       </div>
-      <div className="bg-FarrowBallBorrowedLight p-4  border border-green-600 shadow-md my-8 md:mt-4 items-center">
-        <p className="text-base font-bold px-6 text-green-700">
+      <div className="bg-btnTheme md:bg-FarrowBallBorrowedLight p-4  border border-white md:border-green-600 shadow-md my-8 md:mt-4 items-center rounded-lg md:rounded-none">
+        <p className="text-base font-bold px-6 text-white md:text-green-700">
           Savings of ₹{parseFloat(discount).toFixed(2)}
         </p>
       </div>
-      <div className=" bg-white p-8  border shadow-md my-8 md:mt-4 items-center">
+      <div className=" bg-white p-8  border shadow-md my-8 md:mt-4 items-center rounded-lg md:rounded-none">
         <div className="m-4 border rounded-md">
           <h3 className="m-4 font-bold">
             Review your order details to avoid cancellations
@@ -63,7 +63,7 @@ const OrderInfo = () => {
           <button className="m-4 text-orange-700 border-b border-dashed border-orange-500">Read cancellation policy</button>
           
         </div>
-        <button className=" block my-auto mx-auto uppercase font-bold text-lg bg-black text-white text-center p-4 rounded-md hover:bg-gray-200 hover:text-black hover:shadow-lg">
+        <button className=" block my-auto mx-auto uppercase font-bold text-lg bg-btnTheme text-white text-center p-4 rounded-md hover:bg-appTheme hover:text-black hover:shadow-lg">
           Secure Checkout
         </button>
       </div>

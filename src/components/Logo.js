@@ -5,7 +5,7 @@ import { LOGO_URL } from "../../utils/constants";
 const Logo = () => {
   return (
     <Link to="/">
-      <img className="w-[80px]" src={LOGO_URL} />
+      <img className="md:w-20 w-16  p-2 items-center" src={LOGO_URL} />
     </Link>
   );
 };

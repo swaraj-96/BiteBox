@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "FarrowBallBorrowedLight": "#dbe5dc"
+        "FarrowBallBorrowedLight": "#dbe5dc",
+        "appTheme": "#FACB0B",
+        "btnTheme" : "#21325E"
       }
     },
   },
