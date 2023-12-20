@@ -28,7 +28,7 @@ const Header = () => {
           <Logo />
         </div>
 
-        <ul className="text-zinc-700 md:ml-auto   gap-7 md:gap-4 items-center flex">
+        <ul className="text-zinc-700 md:ml-auto   gap-6 md:gap-4 items-center flex">
           <li>
             <Link
               className="p-2 md:px-4 hover:bg-appTheme  rounded-md flex items-center gap-2"
