@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "FarrowBallBorrowedLight": "#dbe5dc"
+      }
+    },
   },
   plugins: [],
 }

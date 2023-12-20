@@ -25,38 +25,38 @@ const CartItem = () => {
     );
   }
   return (
-    <ul className="basis-7/12 bg-white">
+    <ul className="basis-7/12 bg-white md:bg-gray-200">
       <button 
       onClick={() => dispatch(clearCart())}
-      className="bg-black hover:bg-white  text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base m-2">
+      className="bg-black hover:bg-white  text-center text-white hover:text-black hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base m-2 font-semibold">
         Clear Cart
       </button>
       {cartItems &&
         cartItems.map((item) => (
           <li
             key={item?.item?.card?.info?.id}
-            className="flex gap-4 justify-between max-w-[600px] my-4"
+            className="flex gap-4 justify-between max-w-[600px] my-4 bg-white  md:shadow-md p-4"
           >
             <div className="basis-3/12">
               <img
-                className="w-full h-full md:h-auto object-cover block rounded-md aspect-square"
+                className="w-full md:h-full h-auto object-cover block rounded-md aspect-square"
                 src={CDN_URL + item?.item?.card?.info?.imageId}
                 alt="item-image"
               />
             </div>
             <div className="basis-9/12">
-              <p className="text-lg font-semibold">
+              <p className="text-sm md:text-lg font-semibold">
                 {item?.item?.card?.info?.name}
               </p>
 
-              <p className="hidden md:block">
+              <p className="hidden md:block md:text-s md:text-gray-500">
                 {item?.item?.card?.info?.description?.length > 50
                   ? item?.item?.card?.info?.description.slice(0, 50) + "..."
                   : item?.item?.card?.info?.description}
               </p>
 
-              <p className="my-2 space-x-1">
-                <span className="font-semibold">
+              <p className="my-2 space-x-1 text-xs md:text-base">
+                <span className="font-semibold ">
                   ₹
                   {parseFloat(
                     (
@@ -71,29 +71,29 @@ const CartItem = () => {
 
               {/* actions */}
               <div className="flex justify-between items-center mt-2">
-                <div className="flex items-center">
+                <div className="flex items-center border border-solid border-gray-700">
                   <button
                     onClick={() => decreaseItem(item?.item?.card?.info?.id)}
                     disabled={item?.quantity === 1}
                     className={
-                      "bg-orange-500 disabled:bg-orange-500/50 disabled:cursor-not-allowed text-white font-bold w-8 h-8 rounded-md"
+                      " disabled:text-orange-500/50 disabled:cursor-not-allowed text-gray-400 font-bold w-8 h-8"
                     }
                   >
-                    -
+                   ╶
                   </button>
-                  <p className="font-bold w-8 h-8 flex justify-center items-center">
+                  <p className=" w-8 h-8 flex justify-center items-center text-sm text-green-600 font-semibold">
                     {item?.quantity}
                   </p>
                   <button
                     onClick={() => increaseItem(item?.item?.card?.info?.id)}
-                    className="bg-orange-500 text-white font-bold w-8 h-8 rounded-md"
+                    className="text-green-600 font-bold w-8 h-8"
                   >
                     +
                   </button>
                 </div>
                 <button
                   onClick={() => removeItem(item?.item?.card?.info?.id)}
-                  className="border border-orange-500 text-xs font-semibold text-orange-500 p-2 px-4 rounded-md"
+                  className="border text-xs font-semibold text-white p-2 px-4 rounded-md bg-black hover:bg-gray-200 hover:text-black hover:shadow-lg"
                 >
                   Remove
                 </button>

@@ -8,7 +8,7 @@ const Cart = () => {
   console.log(cartItems);
 
   return (
-    <div className="bg-gray-300">
+    <div className="bg-gray-200">
       <div className="container-max py-8 pb-1">
         <h1 className="text-2xl my-4 font-semibold">Cart</h1>
         <div className="my-2 w-1/2"></div>
