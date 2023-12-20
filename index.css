@@ -44,6 +44,17 @@ html {
     display: flex;
     align-items: flex-end;
   }
+
+  .shadow-upward::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    box-shadow: 0 --10px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+  }
  
  
  
