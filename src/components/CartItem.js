@@ -25,10 +25,10 @@ const CartItem = () => {
     );
   }
   return (
-    <ul className="basis-7/12">
+    <ul className="basis-7/12 bg-white">
       <button 
       onClick={() => dispatch(clearCart())}
-      className="bg-black hover:bg-white  text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base">
+      className="bg-black hover:bg-white  text-center text-white hover:text-orange-400 hover:shadow-lg p-2 justify-center gap-2 items-center md:px-2 rounded-xl text-sm md:text-base m-2">
         Clear Cart
       </button>
       {cartItems &&
