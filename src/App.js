@@ -10,13 +10,11 @@ import {
   createBrowserRouter,
   Outlet,
   RouterProvider,
-  useLocation,
 } from "react-router-dom";
-import { Provider, useDispatch, useSelector } from "react-redux";
+import { Provider} from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
-import { closeMenu } from "../utils/appSlice";
 
 //this is for home page/parent route layout
 const AppLayout = () => {

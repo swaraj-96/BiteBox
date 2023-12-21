@@ -1,11 +1,9 @@
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleMenu } from "../../utils/appSlice";
+
 import {
-  Bars3Icon,
   BuildingOfficeIcon,
-  HomeIcon,
   PhoneIcon,
   ShoppingBagIcon,
 } from "@heroicons/react/24/solid";
@@ -13,13 +11,6 @@ import {
 const Header = () => {
   // Subscribing to the store using a Selector
   const cartItems = useSelector((store) => store.cart.items);
-  const { isMenuOpen } = useSelector((state) => state.app);
-
-  const dispatch = useDispatch();
-
-  const handleToggleMenu = () => {
-    dispatch(toggleMenu());
-  };
 
   return (
     <header className="sticky w-full top-0  bg-white  z-40 border-b  shadow-xl md:shadow-sm  md:border-gray-10 border-white md:py-0 py-2">
