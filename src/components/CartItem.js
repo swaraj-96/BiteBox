@@ -7,6 +7,7 @@ import {
   clearCart,
 } from "../../utils/cartSlice";
 import { CDN_URL } from "../../utils/constants";
+import toast, {Toaster} from "react-hot-toast";
 
 const CartItem = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -15,7 +16,11 @@ const CartItem = () => {
 
   const increaseItem = (id) => dispatch(increaseQuantity({ id }));
   const decreaseItem = (id) => dispatch(decreaseQuantity({ id }));
-  const removeItem = (id) => dispatch(removeFromCart({ id }));
+  
+  const removeItem = (id) => {
+    dispatch(removeFromCart({ id }));
+    toast.success("Item Remove from Cart!")
+  } 
 
   if (cartItems.length == 0) {
     return (
@@ -97,6 +102,7 @@ const CartItem = () => {
                 >
                   Remove
                 </button>
+                <Toaster/>
               </div>
             </div>
           </li>

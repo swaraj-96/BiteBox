@@ -1,15 +1,20 @@
 import { CDN_URL } from "../../utils/constants";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../utils/cartSlice";
+import toast, {Toaster} from "react-hot-toast";
 
 const ItemList = ({ items }) => {
   console.log(items);
 
   const dispatch = useDispatch();
 
+  
+
   const handleAddItem = (item) => {
     //dispatch an action
     dispatch(addItem(item));
+     toast.success("Item Added to Cart!")
+    
   };
 
   return (
@@ -27,9 +32,7 @@ const ItemList = ({ items }) => {
                 <h2 className="text-base font-semibold">
                   {item?.card?.info?.name}
                 </h2>
-                <p className="text-xs font-semibold">
-                  ₹ {itemPrice/100}
-                </p>
+                <p className="text-xs font-semibold">₹ {itemPrice / 100}</p>
                 <p className="text-xs  md:block">
                   {item?.card?.info?.description}
                 </p>
@@ -43,10 +46,12 @@ const ItemList = ({ items }) => {
                 />
                 <button
                   className="bg-btnTheme text-white hover:bg-appTheme hover:text-black font-bold md:p-2 p-1 md:px-6 px-4 rounded-md absolute shadow-md  -bottom-5 -translate-x-[-23%] md:-translate-x-[-30%] md:left-[20%]"
-                  onClick={() => handleAddItem({...item, itemPrice})}
+                  onClick={() => handleAddItem({ ...item, itemPrice })}
+                  
                 >
                   ADD
                 </button>
+                <Toaster/>
               </div>
             </li>
           );
