@@ -13,13 +13,13 @@ const About = () => {
         <p>
           <span className="text-btnTheme font-semibold">BiteBox</span> is a food
           ordering application built with React.js, Swiggy’s live API &
-          tailwindcss.The application provides users with real-time access to
+          Tailwind CSS.The application provides users with real-time access to
           Swiggy’s live restaurant data, enabling them to explore a variety of
           restaurants and their details seamlessly.
         </p>
         <p>
           <span className="text-btnTheme font-semibold">Tech Stack used :</span>{" "}
-          React.js, parcel, Redux-toolkit, Jest(testing), tailwindcss
+          React.js, parcel, Redux-toolkit, Jest(testing) & Tailwind CSS.
         </p>
         <p>
           <p>
