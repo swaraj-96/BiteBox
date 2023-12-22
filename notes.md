@@ -18,22 +18,22 @@
   - HTTPs
   - Tree Shaking - remove unused code 
 
-  # food ordering app
-  /*
- COMPONENTS-
-   Header
+  # Structure of the app
+  # COMPONENTS-
+   1. Header
       - Logo 
       - Navitems
-   Body
+   2. Body
       - Search Input
+      - Filtered buttons
       - Restaurant Container
              - Restaurant Card
                    - image
-                   - cuisine, name of restaurant, rating
-   Footer
+                   - cuisine, name of restaurant, rating, delivery time
+   3. Footer
       - Copyright
       - Links
       - Contacts
       - Address
-  NOTE :- All components should wrapped inside a main components called AppLayout
-  */
+  - NOTE :- All components should wrapped inside a main components called AppLayout
+  
