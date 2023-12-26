@@ -33,7 +33,7 @@ seamlessly.
 - Toggle light theme & dark theme
 
 ## Snapshots
-![Screen shot](./images/bitebox%20mob.png)
+![Screen shot](https://bitebox1.vercel.app/bitebox%20mob.png)
 ## Installation
 
 1. Clone this repository
