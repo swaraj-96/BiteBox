@@ -43,14 +43,14 @@ const RestaurantMenu = () => {
   return (
     <div  className='container-md my-8'>
       {/* restaurant info */}
-      <div className="flex justify-between items-center pb-4 border-b border-dashed dark:border-gray-700">
+      <div className="flex justify-between items-center pb-4 border-b border-dashed">
         <div>
-          <h2 className="text-xl font-bold my-2 dark:text-white">{name}</h2>
-          <p className="text-xs text-gray-500 dark:text-slate-400">{cuisines.join(", ")}</p>
-          <p className="text-xs text-gray-500 dark:text-slate-400">
+          <h2 className="text-xl font-bold my-2">{name}</h2>
+          <p className="text-xs text-gray-500">{cuisines.join(", ")}</p>
+          <p className="text-xs text-gray-500">
             {areaName}, {sla.lastMileTravelString}
           </p>
-          <p className="font-semibold text-xs text-gray-500 dark:text-slate-400">
+          <p className="font-semibold text-xs text-gray-500 ">
             {costForTwoMessage}
           </p>
         </div>
@@ -58,13 +58,13 @@ const RestaurantMenu = () => {
           <p className="flex-center gap-1 mb-2 text-green-500 ">
             ⭐ {avgRatingString}
           </p>
-          <p className="pt-2 border-t text-xs font-normal text-gray-500 dark:text-slate-400">
+          <p className="pt-2 border-t text-xs font-normal text-gray-500">
             {totalRatingsString}
           </p>
         </div>
       </div>
       <div className="flex justify-center items-center my-2">
-      <h3 className="font-semibold text-gray-500 py-2 text-base dark:text-slate-400">~ M E N U ~</h3>
+      <h3 className="font-semibold text-gray-500 py-2 text-base">~ M E N U ~</h3>
       </div>
        
       {/* accordion categories */}

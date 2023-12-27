@@ -8,9 +8,9 @@ const Cart = () => {
   console.log(cartItems);
 
   return (
-    <div className="md:bg-gray-200 bg-appTheme dark:bg-darkBgTheme">
+    <div className="md:bg-gray-200 bg-appTheme">
       <div className="container-max py-8 pb-1">
-        <h1 className="text-2xl my-4 font-semibold dark:text-white">Cart</h1>
+        <h1 className="text-2xl my-4 font-semibold">Cart</h1>
         <div className="my-2 w-1/2"></div>
 
         {/* cart details */}
