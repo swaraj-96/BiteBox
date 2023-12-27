@@ -5,7 +5,8 @@ const RestaurantCard = (props) => {
   const { resData } = props;
   return (
     <>
-      <div className="overlay-container">
+    <div className="dark:bg-[#1E2836] dark:shadow-xl dark:rounded-t-md ">
+    <div className="overlay-container ">
         <img
           className="res-logo relative w-full min-h-[180px] overflow-hidden aspect-video object-cover block rounded-md"
           src={CDN_URL + resData.info.cloudinaryImageId}
@@ -21,19 +22,24 @@ const RestaurantCard = (props) => {
           </p>
         </div>
       </div>
-      <h2 className="text-lg font-bold mt-2 text-zinc-800 truncate">
+      <div>
+      <h2 className="text-lg font-bold mt-2 text-zinc-800 truncate dark:text-white">
         {resData.info.name}
       </h2>
 
-      <p className="font-bold text-zinc-800 text-md">
+      <p className="font-bold text-zinc-800 text-md dark:text-white">
         {resData.info.avgRating} ⭐ • {resData.info.sla.deliveryTime} mins
       </p>
 
-      <h4 className="text-zinc-700 truncate">
+      <h4 className="text-zinc-700 truncate dark:text-slate-400">
         {resData.info.cuisines.join(" , ")}
       </h4>
-      <p className="text-zinc-600">{resData.info?.areaName}</p>
-      <h4 className="text-zinc-700 font-bold">{resData.info?.costForTwo}</h4>
+      <p className="text-zinc-600 dark:text-slate-400">{resData.info?.areaName}</p>
+      <h4 className="text-zinc-700 font-bold dark:text-white">{resData.info?.costForTwo}</h4>
+      </div>
+    </div>
+      
+      
     </>
   );
 };
