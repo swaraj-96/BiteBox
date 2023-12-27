@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import ThemeButton from "./ThemeButton";
+
 import {
   BuildingOfficeIcon,
   PhoneIcon,
@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container-max flex justify-between items-center">
         <div className=" items-center gap-4">
           <Logo />
-          <ThemeButton />
+    
         </div>
 
         <ul className="text-zinc-700 md:ml-auto   gap-6 md:gap-4 items-center flex">
