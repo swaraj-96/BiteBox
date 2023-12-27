@@ -15,19 +15,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 
 //this is for home page/parent route layout
 const AppLayout = () => {
-  const [themeMode, setThemeMode] = useState("light");
-
-  const darkMode = () => {
-   setThemeMode("dark");
-  };
-  const lightMode = () => {
-   setThemeMode("light");
-  };
-
-  useEffect(() => {
-    document.querySelector("html").classList.remove("dark", "light");
-    document.querySelector("html").classList.add(themeMode);
-  }, [themeMode]);
+  
   
   return (
     // provider is used to wrap our whole app and connect it to our central store with props value as our store name.
