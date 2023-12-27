@@ -23,6 +23,11 @@ const AppLayout = () => {
   const lightMode = () => {
    setThemeMode("light");
   };
+
+  useEffect(() => {
+    document.querySelector("html").classList.remove("dark", "light");
+    document.querySelector("html").classList.add(themeMode);
+  }, [themeMode]);
   
   return (
     // provider is used to wrap our whole app and connect it to our central store with props value as our store name.
