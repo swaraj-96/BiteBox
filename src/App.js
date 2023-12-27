@@ -15,17 +15,35 @@ import { Provider} from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 //this is for home page/parent route layout
 const AppLayout = () => {
+
+  const [themeMode, setThemeMode] = useState("light");
+  const darkMode = () => {
+     setThemeMode("dark");
+   };
+   const lightMode = () => {
+    setThemeMode("light");
+  };
+
+  useEffect(() => {
+    document.querySelector("html").classList.remove("dark", "light");
+    document.querySelector("html").classList.add(themeMode);
+  }, [themeMode]);
+
+
   return (
     // provider is used to wrap our whole app and connect it to our central store with props value as our store name.
     <Provider store={appStore}>
+      <ThemeProvider value={{themeMode, darkMode, lightMode}}>
       <div className="app flex flex-col min-h-screen bg-bgTheme">
         <Header />
         <Outlet />
         <Footer />
       </div>
+      </ThemeProvider>
     </Provider>
   );
 };
