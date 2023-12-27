@@ -18,7 +18,7 @@ const About = () => {
           is a food ordering application built with React.js, Swiggy’s live API
           & Tailwind CSS.The application provides users with real-time access to
           Swiggy’s live restaurant data, enabling them to explore a variety of
-          restaurants and their details seamlessly.
+          restaurants and their details seamlessly
         </p>
         <p className="dark:text-slate-400">
           <span className="text-btnTheme font-semibold dark:text-[#3758F9]">
