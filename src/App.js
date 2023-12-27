@@ -1,47 +1,31 @@
-import React, { lazy, Suspense } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import { Provider } from "react-redux";
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
+import { Provider} from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
-//import About from "./components/About";
-
-//lazy loading
-const About = lazy(() => import("./components/About"));
 
 //this is for home page/parent route layout
 const AppLayout = () => {
-  const [themeMode, setThemeMode] = useState("light");
-
-  const darkMode = () => {
-    setThemeMode("dark");
-  };
-  const lightMode = () => {
-    setThemeMode("light");
-  };
-
-  useEffect(() => {
-    document.querySelector("html").classList.remove("dark", "light");
-    document.querySelector("html").classList.add(themeMode);
-  }, [themeMode]);
-
   return (
     // provider is used to wrap our whole app and connect it to our central store with props value as our store name.
     <Provider store={appStore}>
-      <ThemeProvider value={{ themeMode, darkMode, lightMode }}>
-        <div className="app flex flex-col min-h-screen bg-bgTheme dark:bg-darkBgTheme">
-          <Header />
-          <Outlet />
-          <Footer />
-        </div>
-      </ThemeProvider>
+      <div className="app flex flex-col min-h-screen bg-bgTheme">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
     </Provider>
   );
 };
@@ -59,11 +43,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: (
-          <Suspense fallback={<h1>Loading....</h1>}>
-            <About />
-          </Suspense>
-        ),
+        element: <About />,
       },
       {
         path: "/contact",
