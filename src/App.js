@@ -11,7 +11,7 @@ import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
-import { ThemeProvider } from "./contexts/ThemeContext";
+
 
 //this is for home page/parent route layout
 const AppLayout = () => {
@@ -20,13 +20,13 @@ const AppLayout = () => {
   return (
     // provider is used to wrap our whole app and connect it to our central store with props value as our store name.
     <Provider store={appStore}>
-      <ThemeProvider value={{themeMode, darkMode, lightMode}}>
+      
       <div className="app flex flex-col min-h-screen bg-bgTheme">
         <Header />
         <Outlet />
         <Footer />
       </div>
-      </ThemeProvider>
+      
     </Provider>
   );
 };
