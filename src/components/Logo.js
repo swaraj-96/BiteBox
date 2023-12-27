@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../../utils/constants";
-import img1 from '../../images/Logo.png'
+
 
 const Logo = () => {
   return (

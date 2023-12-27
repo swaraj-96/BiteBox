@@ -1,5 +1,5 @@
 import { LOGO_URL } from "../../utils/constants";
-import img1 from '../../images/Logo.png'
+
 
 const About = () => {
   return (
