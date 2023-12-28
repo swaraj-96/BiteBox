@@ -15,12 +15,12 @@ const Header = () => {
   return (
     <header className="sticky w-full top-0  bg-white  z-40 border-b  shadow-xl md:shadow-sm  md:border-gray-10 border-white md:py-0 py-2 dark:bg-darkBgTheme dark:border-none dark:shadow-2xl">
       <div className="container-max flex justify-between items-center">
-        <div className=" items-center gap-4 flex justify-between">
+        <div className=" items-center flex justify-evenly">
           <Logo />
           <ThemeButton/>
         </div>
 
-        <ul className="text-zinc-700 md:ml-auto   gap-6 md:gap-4 items-center flex dark:text-[#FAFAFA]">
+        <ul className="text-zinc-700 md:ml-auto   gap-4 md:gap-4 items-center flex dark:text-[#FAFAFA]">
           <li>
             <Link
               className="p-2 md:px-4 hover:bg-appTheme dark:hover:bg-[#374151] rounded-md flex items-center gap-2"
