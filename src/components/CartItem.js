@@ -24,7 +24,7 @@ const CartItem = () => {
 
   if (cartItems.length == 0) {
     return (
-      <div className="flex grow min-h-[60vh] justify-center items-center">
+      <div className="flex grow min-h-[60vh] justify-center items-center dark:text-white">
         <p>Your cart is empty!</p>
       </div>
     );
