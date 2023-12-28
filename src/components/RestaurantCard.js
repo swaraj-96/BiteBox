@@ -5,7 +5,7 @@ const RestaurantCard = (props) => {
   const { resData } = props;
   return (
     <>
-      <div className="dark:bg-[#1E2836] dark:shadow-xl dark:rounded-t-md">
+      <div className=" dark:shadow-xl dark:rounded-t-md">
         <div className="overlay-container">
           <img
             className="res-logo relative w-full min-h-[180px] overflow-hidden aspect-video object-cover block rounded-md"
