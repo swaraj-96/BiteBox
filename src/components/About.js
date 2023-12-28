@@ -1,11 +1,12 @@
 import { LOGO_URL } from "../../utils/constants";
+import logo from '../../images/Logo.png'
 
 
 const About = () => {
   return (
     <div className="container-md py-16  text-center min-h-[80vh] ">
       <div className="bg-white py-2 items-center rounded-t-2xl shadow-2xl dark:border dark:border-gray-700 dark:bg-[#222B45]">
-        <img src={LOGO_URL} className="w-24 max-w-[480px] mx-auto rounded-lg" />
+        <img src={logo} className="w-24 max-w-[480px] mx-auto rounded-lg" />
       </div>
 
       <div className=" mx-auto bg-appTheme dark:bg-[#1E2836] py-4 px-6 rounded-b-2xl shadow-2xl space-y-4 md:text-base text-s text-center items-center dark:border dark:border-gray-700">
