@@ -7,7 +7,7 @@ const Contact = () => {
     <div className="max-w-[768px] w-[90%] mx-auto py-16  min-h-[80vh] items-center">
       <div className="bg-white py-8 rounded-br-2xl shadow-2xl px-8 text-base dark:bg-[#1E2836] dark:border dark:border-gray-700">
         <p className="text-xs text-gray-500 dark:text-slate-400">Hello,</p>
-        <h1 className="text-2xl font-bold dark:text-white">I'm Swaraj Pradhan</h1>
+        <h1 className="text-2xl font-bold dark:text-white" data-testid='name'>I'm Swaraj Pradhan</h1>
         <p className="text-indigo-400 font-semibold">Frontend Developer</p>
         <div className="my-4">
           <h2 className="font-bold text-lg text-btnTheme dark:text-indigo-800">Contact Me</h2>
