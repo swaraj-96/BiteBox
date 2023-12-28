@@ -21,7 +21,7 @@ const AppLayout = () => {
     // provider is used to wrap our whole app and connect it to our central store with props value as our store name.
     <Provider store={appStore}>
       
-      <div className="app flex flex-col min-h-screen bg-bgTheme">
+      <div className="app flex flex-col min-h-screen bg-bgTheme dark:bg-darkBgTheme">
         <Header />
         <Outlet />
         <Footer />

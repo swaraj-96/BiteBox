@@ -50,7 +50,7 @@ const Body = () => {
 
   return (
     <>
-      <div className="body bg-appTheme py-4 rounded-b-3xl shadow-xl">
+      <div className="body bg-appTheme py-4 rounded-b-3xl shadow-xl dark:bg-[#222B45]">
         <div className="">
           {/* search bar */}
           <div className="search flex gap-2 md:gap-4 max-w-[560px] w-[90%] mx-auto mt-6">
@@ -64,7 +64,7 @@ const Body = () => {
               }}
             ></input>
             <button
-              className="search-btn bg-btnTheme basis-2/12 text-center text-white p-2 flex justify-center gap-2 items-center md:px-8 rounded-md text-sm md:text-base font-semibold"
+              className="search-btn bg-btnTheme basis-2/12 text-center text-white p-2 flex justify-center gap-2 items-center md:px-8 rounded-md text-sm md:text-base font-semibold dark:bg-[#374151]"
               onClick={() => {
                 //console.log(inputText)
                 //below code will filteeed from main data again and again
