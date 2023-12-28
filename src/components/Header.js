@@ -20,7 +20,7 @@ const Header = () => {
           <ThemeButton/>
         </div>
 
-        <ul className="text-zinc-700 md:ml-auto   gap-6 md:gap-4 items-center flex dark:text-[#FAFAFA]">
+        <ul className="text-zinc-700 md:ml-auto   gap-4 md:gap-4 items-center flex dark:text-[#FAFAFA]">
           <li>
             <Link
               className="p-2 md:px-4 hover:bg-appTheme dark:hover:bg-[#374151] rounded-md flex items-center gap-2"
