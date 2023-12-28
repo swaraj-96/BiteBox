@@ -83,7 +83,7 @@ const Body = () => {
           {/* Filtered buttons */}
           <div className="search flex gap-2 md:gap-4 max-w-[560px] w-[90%] mx-auto mt-6 justify-between">
             <button
-              className="all-btn bg-btnTheme text-center text-white p-2  justify-center gap-2 items-center md:px-4  rounded-md text-[10px] md:text-sm hover:bg-white hover:text-black hover:shadow-lg font-semibold"
+              className="all-btn bg-btnTheme text-center text-white p-2  justify-center gap-2 items-center md:px-4  rounded-md text-[10px] md:text-sm hover:bg-white hover:text-black hover:shadow-lg font-semibold dark:bg-[#3758F9] dark:hover:text-white dark:hover:bg-blue-800 dark:active:bg-blue-900 dark:focus:outline-none dark:focus:ring dark:focus:ring-blue-300"
               onClick={() => {
                 //this will show all the rest. from list of rest data(main data)
                 setFilteredRestaurant(listOfRestaurants);
@@ -92,7 +92,7 @@ const Body = () => {
               All
             </button>
             <button
-              className="filter-btn bg-btnTheme  text-center text-white p-2  justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-white hover:text-black hover:shadow-lg font-semibold"
+              className="filter-btn bg-btnTheme  text-center text-white p-2  justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-white hover:text-black hover:shadow-lg font-semibold dark:bg-[#3758F9] dark:hover:text-white dark:hover:bg-blue-800 dark:active:bg-blue-900 dark:focus:outline-none dark:focus:ring dark:focus:ring-blue-300"
               onClick={() => {
                 const filteredList = listOfRestaurants.filter(
                   (res) => res.info.avgRating > 4.3
@@ -105,7 +105,7 @@ const Body = () => {
             </button>
 
             <button
-              className="filter-btn bg-btnTheme  text-white p-2 justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-white hover:text-black hover:shadow-lg font-semibold"
+              className="filter-btn bg-btnTheme  text-white p-2 justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-white hover:text-black hover:shadow-lg font-semibold dark:bg-[#3758F9] dark:hover:text-white dark:hover:bg-blue-800 dark:active:bg-blue-900 dark:focus:outline-none dark:focus:ring dark:focus:ring-blue-300"
               onClick={() => {
                 const filteredList = listOfRestaurants.filter(
                   (res) => res.info?.sla?.deliveryTime <= 20
@@ -117,7 +117,7 @@ const Body = () => {
               Fast Delivery
             </button>
             <button
-              className="filter-btn bg-btnTheme  text-center text-white p-2  justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-white hover:text-black hover:shadow-lg font-semibold"
+              className="filter-btn bg-btnTheme  text-center text-white p-2  justify-center gap-2 items-center md:px-4 rounded-md text-[10px] md:text-sm hover:bg-white hover:text-black hover:shadow-lg font-semibold dark:bg-[#3758F9] dark:hover:text-white dark:hover:bg-blue-800 dark:active:bg-blue-900 dark:focus:outline-none dark:focus:ring dark:focus:ring-blue-300"
               onClick={() => {
                 const filteredList = listOfRestaurants.filter(
                   (res) =>
@@ -138,10 +138,10 @@ const Body = () => {
       </div>
       {/* restaurant list */}
       <div className="res-container container-max">
-        <h1 className=" mt-8 font-bold text-2xl text-zinc-700">
+        <h1 className=" mt-8 font-bold text-2xl text-zinc-700 dark:text-white">
           🍽️ All Restaurants Nearby
         </h1>
-        <p className="text-gray-500 mb-2 text-base">
+        <p className="text-gray-500 mb-2 text-base dark:text-slate-400">
           Discover unique tastes near you
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
